@@ -1,106 +1,680 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="docs/profile_pic.jpeg">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="docs/profile_pic.jpeg">
+  <title>Benjamin Driver — Full-Stack Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    :root {
+      --navy:   #0F1B2D;
+      --navy2:  #162236;
+      --navy3:  #1E2F45;
+      --teal:   #00C2B3;
+      --teal2:  #00a89a;
+      --white:  #F0F4F8;
+      --slate:  #8499B0;
+      --card:   #192840;
+      --border: #223352;
+    }
 
-    <title>Personal Website</title>
+    html { scroll-behavior: smooth; }
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Styles -->
-    <style>
-        .image {
-            width: 200px!important;
-            height: 200px;
-            border-radius: 50%;
-        }
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+    }
 
-        .full-height {
-            height: 100vh;
-        }
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 48px;
+      background: rgba(15,27,45,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--teal);
+      letter-spacing: .04em;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 36px; list-style: none; }
+    .nav-links a {
+      color: var(--slate);
+      text-decoration: none;
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
 
-        .flex-center {
-            padding-top: 20px;
-            display: flex;
-            justify-content: center;
-        }
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 120px 48px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+    .hero-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -.02em;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .hero-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      font-weight: 300;
+      color: var(--slate);
+      margin-bottom: 32px;
+    }
+    .hero-title span { color: var(--teal); font-weight: 500; }
+    .hero-desc {
+      max-width: 560px;
+      font-size: .97rem;
+      color: var(--slate);
+      line-height: 1.8;
+      margin-bottom: 44px;
+    }
+    .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 4px;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--navy);
+    }
+    .btn-primary:hover { background: var(--teal2); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
 
-        .position-ref {
-            position: relative;
-        }
+    /* ── TICKER ── */
+    .ticker-wrap {
+      background: var(--navy2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+      padding: 14px 0;
+      white-space: nowrap;
+    }
+    .ticker-track {
+      display: inline-flex;
+      gap: 0;
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-item {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .78rem;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      padding: 0 32px;
+    }
+    .ticker-item span { color: var(--teal); margin-right: 10px; }
+    @keyframes ticker {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
 
-        .content {
-            text-align: center;
-        }
+    /* ── SECTIONS ── */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 100px 48px;
+    }
+    .section-label {
+      font-size: .75rem;
+      font-weight: 500;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .section-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: -.01em;
+      margin-bottom: 56px;
+      color: var(--white);
+    }
 
-        .title {
-            font-size: 84px;
-        }
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 72px;
+      align-items: start;
+    }
+    .about-text p {
+      color: var(--slate);
+      font-size: .97rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+    .about-text p a { color: var(--teal); text-decoration: none; }
+    .about-text p a:hover { text-decoration: underline; }
+    .about-photo {
+      position: sticky;
+      top: 100px;
+      text-align: center;
+    }
+    .about-photo img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 3px solid var(--teal);
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px;
+    }
+    .about-location {
+      font-size: .82rem;
+      color: var(--slate);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .about-location i { color: var(--teal); }
 
-        .about {
-            font-size: 44px;
-        }
+    /* ── SKILLS ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 28px;
+      transition: border-color .2s, transform .2s;
+    }
+    .skill-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+    .skill-card-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag {
+      font-size: .78rem;
+      font-weight: 400;
+      padding: 4px 12px;
+      border-radius: 3px;
+      background: var(--navy3);
+      color: var(--slate);
+      border: 1px solid var(--border);
+    }
 
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+    /* ── EXPERIENCE ── */
+    .exp-list { display: flex; flex-direction: column; gap: 32px; }
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--teal);
+      border-radius: 0 8px 8px 0;
+      padding: 32px 36px;
+      transition: border-color .2s;
+    }
+    .exp-card:hover { border-left-color: var(--teal2); }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .exp-company {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .exp-dates {
+      font-size: .8rem;
+      color: var(--teal);
+      font-weight: 500;
+      letter-spacing: .05em;
+      white-space: nowrap;
+    }
+    .exp-role {
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--slate);
+      margin-bottom: 20px;
+    }
+    .exp-bullets { list-style: none; padding: 0; }
+    .exp-bullets li {
+      font-size: .9rem;
+      color: var(--slate);
+      padding: 6px 0 6px 20px;
+      position: relative;
+      line-height: 1.7;
+    }
+    .exp-bullets li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--teal);
+      font-size: .9rem;
+    }
 
-        .m-b-md {
-            margin-bottom: 30px;
-        }
+    /* ── LINKS / CONNECT ── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 24px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--white);
+      transition: all .2s;
+    }
+    .link-card:hover { border-color: var(--teal); transform: translateY(-2px); color: var(--teal); }
+    .link-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      background: var(--navy3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .link-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .03em;
+    }
+    .link-sub {
+      font-size: .75rem;
+      color: var(--slate);
+      margin-top: 2px;
+    }
 
-        .about-content {
-            margin-left: 40px;
-            margin-right: 40px;
-            margin-bottom: 40px;
-        }
-    </style>
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 40px 48px;
+      border-top: 1px solid var(--border);
+      font-size: .8rem;
+      color: var(--slate);
+    }
+    footer a { color: var(--teal); text-decoration: none; }
+
+    /* ── DIVIDER ── */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0 48px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 24px; }
+      .nav-links { gap: 20px; }
+      .hero { padding: 100px 24px 60px; }
+      section { padding: 72px 24px; }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-photo { position: static; }
+      .section-divider { margin: 0 24px; }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links { display: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .ticker-track { animation: none; }
+      * { transition: none !important; }
+    }
+  </style>
 </head>
 <body>
-<div class="flex-center position-ref full-height">
 
-    <div class="content">
-        <div class="title m-b-md">
-            Benjamin Driver
-        </div>
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#top">BD</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#connect">Connect</a></li>
+  </ul>
+</nav>
 
-        <div><img src="docs/profile_pic.jpeg" alt="" class="image"></div><br><br>
-
-        <div class="links">
-            <a href="https://www.linkedin.com/in/bwdriver/"><i class="fa fa-linkedin-square"></i>Linkedin</a>
-            <a href="docs/BenDriver_Resume0930.pdf"><i class="fa fa-file"></i>Resume</a>
-            <a href="docs/web_cover_letter.pdf"><i class="fa fa-file"></i>Cover Letter</a>
-            <a href="https://github.com/Ben-Driver"><i class="fa fa-github"></i>GitHub</a>
-            <a href="mailto:benjamin_driver@yahoo.com"><i class="fa fa-wechat"></i>Email</a>
-        </div>
-        <br>
-        <div class="about ">
-            About
-        </div>
-        <p class="about-content">Hello my name is Benjamin Driver and I am a graduate of <a href="https://new.tamuc.edu/">Texas A&M University - Commerce</a> where I received a Bachelor of Science with a major in Computer Science and minor in Mathematics.
-            I have over a year of experience at <a href="https://www.innovationfirst.com/">Innovation First International</a> as a Web Developer/IT Support Specialist where I built a
-            scroll through website to promote their new <a href="https://www.junkbots.com/">Junkbots</a> robotics toys and a Vue.js hot reloading <a href="https://www.racksolutions.com/news/blog/server-rack-power-consumption-calculator/">Power Consumption Calculator</a>.
-            The skills being used for IT Support include becoming familiar with equipment and supplies used throughout the office, helping diagnose and troubleshoot technical issues, building and setting up new computers, and other IT support tasks. Currently, a Web Developer
-            at Traxxas where I work with Magento and APEX. For more information, see <a href="docs/BenDriver_Resume4-1.pdf">my CV</a>.</p>
-
+<!-- HERO -->
+<div id="top">
+  <div class="hero">
+    <div class="hero-eyebrow">Full-Stack Developer · Dallas, TX</div>
+    <h1 class="hero-name">Benjamin<br>Driver</h1>
+    <div class="hero-title">Building <span>eCommerce platforms</span> &amp; backend systems</div>
+    <p class="hero-desc">
+      5+ years crafting Magento 2 integrations, real-time data pipelines, and
+      scalable full-stack applications. Currently leading development and Scrum at Traxxas.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="docs/BenDriver_Resume0930.pdf" target="_blank">
+        <i class="fa-solid fa-file-arrow-down"></i> Resume
+      </a>
+      <a class="btn btn-outline" href="#connect">
+        <i class="fa-solid fa-envelope"></i> Get in Touch
+      </a>
+      <a class="btn btn-outline" href="https://github.com/Ben-Driver" target="_blank">
+        <i class="fa-brands fa-github"></i> GitHub
+      </a>
     </div>
+  </div>
+
+  <!-- TICKER -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <!-- set 1 -->
+      <span class="ticker-item"><span>//</span> PHP</span>
+      <span class="ticker-item"><span>//</span> Magento 2</span>
+      <span class="ticker-item"><span>//</span> RabbitMQ</span>
+      <span class="ticker-item"><span>//</span> Oracle APEX</span>
+      <span class="ticker-item"><span>//</span> Laravel</span>
+      <span class="ticker-item"><span>//</span> Vue.js</span>
+      <span class="ticker-item"><span>//</span> Node.js</span>
+      <span class="ticker-item"><span>//</span> Python</span>
+      <span class="ticker-item"><span>//</span> MySQL</span>
+      <span class="ticker-item"><span>//</span> REST APIs</span>
+      <span class="ticker-item"><span>//</span> CI/CD</span>
+      <span class="ticker-item"><span>//</span> Scrum Master</span>
+      <span class="ticker-item"><span>//</span> ETL Pipelines</span>
+      <span class="ticker-item"><span>//</span> Algolia Search</span>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <span class="ticker-item"><span>//</span> PHP</span>
+      <span class="ticker-item"><span>//</span> Magento 2</span>
+      <span class="ticker-item"><span>//</span> RabbitMQ</span>
+      <span class="ticker-item"><span>//</span> Oracle APEX</span>
+      <span class="ticker-item"><span>//</span> Laravel</span>
+      <span class="ticker-item"><span>//</span> Vue.js</span>
+      <span class="ticker-item"><span>//</span> Node.js</span>
+      <span class="ticker-item"><span>//</span> Python</span>
+      <span class="ticker-item"><span>//</span> MySQL</span>
+      <span class="ticker-item"><span>//</span> REST APIs</span>
+      <span class="ticker-item"><span>//</span> CI/CD</span>
+      <span class="ticker-item"><span>//</span> Scrum Master</span>
+      <span class="ticker-item"><span>//</span> ETL Pipelines</span>
+      <span class="ticker-item"><span>//</span> Algolia Search</span>
+    </div>
+  </div>
 </div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">01 — About</div>
+  <h2 class="section-heading">A little background</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>
+        I'm a full-stack developer with a B.S. in Computer Science from
+        <a href="https://new.tamuc.edu/" target="_blank">East Texas A&amp;M University</a>
+        (minor in Mathematics) and over 5 years of professional experience building
+        production-grade eCommerce and backend systems.
+      </p>
+      <p>
+        At <a href="https://www.traxxas.com/" target="_blank">Traxxas</a> I wear two hats:
+        hands-on developer and Scrum Master. Day to day that means architecting
+        Magento 2 modules and RabbitMQ publisher/consumer pipelines, integrating
+        with Oracle APEX and MSSQL, and running agile ceremonies for my team.
+        I enjoy problems that sit at the intersection of data architecture and
+        real-time reliability — getting disparate systems to stay in sync automatically.
+      </p>
+      <p>
+        Before Traxxas I was at
+        <a href="https://www.innovationfirst.com/" target="_blank">Innovation First International</a>,
+        where I contributed to a Magento 1 → 2 migration, integrated
+        Algolia Instant Search, and built Laravel applications and Vue.js tools
+        including a
+        <a href="https://www.racksolutions.com/news/blog/server-rack-power-consumption-calculator/" target="_blank">Power Consumption Calculator</a>
+        still in production today.
+      </p>
+      <p>
+        I've also incorporated Spec-Driven AI Development into my workflow —
+        defining system architecture up front before writing a line of code,
+        which has meaningfully improved delivery speed and reduced rework.
+      </p>
+    </div>
+    <div class="about-photo">
+      <img src="docs/profile_pic.jpeg" alt="Benjamin Driver">
+      <div class="about-location"><i class="fa-solid fa-location-dot"></i> Dallas, TX</div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">02 — Skills</div>
+  <h2 class="section-heading">Tech stack</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-label">Languages</div>
+      <div class="skill-tags">
+        <span class="tag">PHP</span>
+        <span class="tag">SQL / PL/SQL</span>
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Java</span>
+        <span class="tag">C++</span>
+        <span class="tag">XML</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Frameworks &amp; Tools</div>
+      <div class="skill-tags">
+        <span class="tag">Magento 2</span>
+        <span class="tag">Laravel</span>
+        <span class="tag">Node.js</span>
+        <span class="tag">Vue.js</span>
+        <span class="tag">Oracle APEX</span>
+        <span class="tag">RabbitMQ</span>
+        <span class="tag">Composer</span>
+        <span class="tag">Selenium</span>
+        <span class="tag">Git / GitLab</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Databases</div>
+      <div class="skill-tags">
+        <span class="tag">MySQL</span>
+        <span class="tag">Oracle</span>
+        <span class="tag">MSSQL</span>
+        <span class="tag">MariaDB</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">eCommerce &amp; Integration</div>
+      <div class="skill-tags">
+        <span class="tag">Magento Cloud</span>
+        <span class="tag">Digital Ocean</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">JSON Messaging</span>
+        <span class="tag">Pub/Sub</span>
+        <span class="tag">Algolia Search</span>
+        <span class="tag">3rd-Party Modules</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">Architecture &amp; Methods</div>
+      <div class="skill-tags">
+        <span class="tag">OOP / OOD</span>
+        <span class="tag">MVC</span>
+        <span class="tag">ETL Pipelines</span>
+        <span class="tag">Closed-Loop Design</span>
+        <span class="tag">Agile / Scrum</span>
+        <span class="tag">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-label">AI &amp; Tooling</div>
+      <div class="skill-tags">
+        <span class="tag">Spec-Driven Dev</span>
+        <span class="tag">GitHub Copilot</span>
+        <span class="tag">Claude</span>
+        <span class="tag">Cursor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">03 — Experience</div>
+  <h2 class="section-heading">Where I've worked</h2>
+  <div class="exp-list">
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-company">Traxxas</div>
+        <div class="exp-dates">July 2020 — Present</div>
+      </div>
+      <div class="exp-role">Full-Stack Developer / Scrum Master · McKinney, TX</div>
+      <ul class="exp-bullets">
+        <li>Served as Scrum Master for an agile development team, leading standups, sprint planning, and task distribution while remaining an active hands-on contributor.</li>
+        <li>Led architectural design of the Magento 2 + RabbitMQ integration platform, defining publisher/consumer/queue structure and automated listener jobs for real-time JSON messaging across product, inventory, order, and content streams.</li>
+        <li>Built custom Magento 2 modules from scratch (registration.php, di.xml, plugin/observer patterns) and extended core and 3rd-party modules.</li>
+        <li>Architected end-to-end pipelines integrating Magento with Oracle APEX and MSSQL, including stored procedures and scheduled jobs with closed-loop logic to automatically detect and correct data discrepancies.</li>
+        <li>Developed mobile-responsive Magento features with a mobile-first mindset, ensuring a consistent experience across web and mobile.</li>
+        <li>Applied Spec-Driven AI Development workflows to define system architecture before implementation, improving delivery speed and reducing rework.</li>
+      </ul>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-header">
+        <div class="exp-company">Innovation First International</div>
+        <div class="exp-dates">May 2019 — June 2020</div>
+      </div>
+      <div class="exp-role">Web Developer / IT Support · Greenville, TX</div>
+      <ul class="exp-bullets">
+        <li>Contributed to a Magento 1 → Magento 2 migration, handling infrastructure planning, CMS page transitions, and 3rd-party module compatibility.</li>
+        <li>Managed Composer dependencies across Magento 2 and Laravel projects, coordinating version upgrades and maintaining package compatibility.</li>
+        <li>Integrated Algolia Instant Search into Magento 2 with custom faceted filtering, improving product discoverability and search performance.</li>
+        <li>Built and maintained Laravel applications using MVC patterns, including automated PHP indexing jobs and MySQL data pipelines.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- CONNECT -->
+<section id="connect">
+  <div class="section-label">04 — Connect</div>
+  <h2 class="section-heading">Get in touch</h2>
+  <div class="links-grid">
+    <a class="link-card" href="https://www.linkedin.com/in/bwdriver/" target="_blank">
+      <div class="link-icon"><i class="fa-brands fa-linkedin"></i></div>
+      <div>
+        <div class="link-label">LinkedIn</div>
+        <div class="link-sub">linkedin.com/in/bwdriver</div>
+      </div>
+    </a>
+    <a class="link-card" href="https://github.com/Ben-Driver" target="_blank">
+      <div class="link-icon"><i class="fa-brands fa-github"></i></div>
+      <div>
+        <div class="link-label">GitHub</div>
+        <div class="link-sub">github.com/Ben-Driver</div>
+      </div>
+    </a>
+    <a class="link-card" href="mailto:benwadedriver@gmail.com">
+      <div class="link-icon"><i class="fa-solid fa-envelope"></i></div>
+      <div>
+        <div class="link-label">Email</div>
+        <div class="link-sub">benwadedriver@gmail.com</div>
+      </div>
+    </a>
+    <a class="link-card" href="docs/BenDriver_Resume0930.pdf" target="_blank">
+      <div class="link-icon"><i class="fa-solid fa-file-pdf"></i></div>
+      <div>
+        <div class="link-label">Resume</div>
+        <div class="link-sub">Download PDF</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Designed &amp; built by <a href="#top">Benjamin Driver</a> · Dallas, TX</p>
+</footer>
+
 </body>
 </html>
