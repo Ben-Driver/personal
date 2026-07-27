@@ -290,6 +290,39 @@
       border: 1px solid var(--border);
     }
 
+    /* ── PROJECTS ── */
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 32px;
+    }
+    .project-card-header {
+      margin-bottom: 8px;
+    }
+    .project-card-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .project-card-desc {
+      font-size: .9rem;
+      color: var(--slate);
+      margin-bottom: 24px;
+      max-width: 640px;
+      line-height: 1.7;
+    }
+    #power-calculator iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 1400px;
+      border: 0;
+      display: block;
+      margin: 0 auto;
+      border-radius: 12px;
+    }
+
     /* ── EXPERIENCE ── */
     .exp-list { display: flex; flex-direction: column; gap: 32px; }
     .exp-card {
@@ -453,6 +486,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#connect">Connect</a></li>
   </ul>
@@ -460,262 +494,289 @@
 
 <main>
 
-<!-- HERO -->
-<div id="top">
-  <div class="hero">
-    <div class="hero-eyebrow">Full-Stack Developer · Dallas, TX</div>
-    <h1 class="hero-name">Benjamin<br>Driver</h1>
-    <div class="hero-title">Building <span>eCommerce platforms</span> &amp; backend systems</div>
-    <p class="hero-desc">
-      5+ years crafting Magento 2 integrations, real-time data pipelines, and
-      scalable full-stack applications. Currently leading development and Scrum at Traxxas.
-    </p>
-    <div class="hero-ctas">
-      <a class="btn btn-primary" href="docs/BenDriver_Resume_Web.pdf" target="_blank" rel="noopener">
-        <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Resume
+  <!-- HERO -->
+  <div id="top">
+    <div class="hero">
+      <div class="hero-eyebrow">Full-Stack Developer · Dallas, TX</div>
+      <h1 class="hero-name">Benjamin<br>Driver</h1>
+      <div class="hero-title">Building <span>eCommerce platforms</span> &amp; backend systems</div>
+      <p class="hero-desc">
+        5+ years crafting Magento 2 integrations, real-time data pipelines, and
+        scalable full-stack applications. Currently leading development and Scrum at Traxxas.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-primary" href="docs/BenDriver_Resume_Web.pdf" target="_blank" rel="noopener">
+          <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Resume
+        </a>
+        <a class="btn btn-outline" href="#connect">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> Get in Touch
+        </a>
+        <a class="btn btn-outline" href="https://github.com/Ben-Driver" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+        </a>
+      </div>
+    </div>
+
+    <!-- TICKER -->
+    <div class="ticker-wrap">
+      <div class="ticker-track">
+        <!-- set 1 -->
+        <span class="ticker-item"><span>//</span> PHP</span>
+        <span class="ticker-item"><span>//</span> Magento 2</span>
+        <span class="ticker-item"><span>//</span> RabbitMQ</span>
+        <span class="ticker-item"><span>//</span> Oracle APEX</span>
+        <span class="ticker-item"><span>//</span> Laravel</span>
+        <span class="ticker-item"><span>//</span> Vue.js</span>
+        <span class="ticker-item"><span>//</span> Node.js</span>
+        <span class="ticker-item"><span>//</span> Python</span>
+        <span class="ticker-item"><span>//</span> MySQL</span>
+        <span class="ticker-item"><span>//</span> REST APIs</span>
+        <span class="ticker-item"><span>//</span> CI/CD</span>
+        <span class="ticker-item"><span>//</span> Scrum Master</span>
+        <span class="ticker-item"><span>//</span> ETL Pipelines</span>
+        <span class="ticker-item"><span>//</span> Algolia Search</span>
+        <!-- set 2 (duplicate for seamless loop) -->
+        <span class="ticker-item"><span>//</span> PHP</span>
+        <span class="ticker-item"><span>//</span> Magento 2</span>
+        <span class="ticker-item"><span>//</span> RabbitMQ</span>
+        <span class="ticker-item"><span>//</span> Oracle APEX</span>
+        <span class="ticker-item"><span>//</span> Laravel</span>
+        <span class="ticker-item"><span>//</span> Vue.js</span>
+        <span class="ticker-item"><span>//</span> Node.js</span>
+        <span class="ticker-item"><span>//</span> Python</span>
+        <span class="ticker-item"><span>//</span> MySQL</span>
+        <span class="ticker-item"><span>//</span> REST APIs</span>
+        <span class="ticker-item"><span>//</span> CI/CD</span>
+        <span class="ticker-item"><span>//</span> Scrum Master</span>
+        <span class="ticker-item"><span>//</span> ETL Pipelines</span>
+        <span class="ticker-item"><span>//</span> Algolia Search</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-label">01 / About</div>
+    <h2 class="section-heading">A little background</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a full-stack developer with a B.S. in Computer Science from
+          <a href="https://new.tamuc.edu/" target="_blank" rel="noopener">East Texas A&amp;M University</a>
+          (minor in Mathematics) and over 5 years of professional experience building
+          production-grade eCommerce and backend systems.
+        </p>
+        <p>
+          At <a href="https://www.traxxas.com/" target="_blank" rel="noopener">Traxxas</a> I build and maintain
+          a Magento 2 platform backed by a RabbitMQ-driven microservices layer, with publishers and consumers
+          handling real-time product, inventory, order, and content data. I've also built distributed Oracle APEX
+          and PL/SQL services for warehouse fulfillment, including inventory allocation and integrations with
+          carrier APIs like USPS, UPS, and FedEx, along with closed-loop reconciliation systems that keep Magento,
+          Oracle, and MSSQL in sync automatically. I enjoy problems that sit at the intersection of data architecture
+          and real-time reliability. I also serve as Scrum Master for my team, running sprint planning and standups
+          alongside my development work.
+        </p>
+        <p>
+          Before Traxxas I was at
+          <a href="https://www.innovationfirst.com/" target="_blank" rel="noopener">Innovation First International</a>,
+          where I contributed to a Magento 1 to 2 migration, integrated
+          Algolia Instant Search, built Laravel applications, and developed a Vue.js power consumption calculator
+          for Rack Solutions that helped customers estimate a server rack's energy draw
+          and cooling needs before purchase.
+        </p>
+        <p>
+          I've also incorporated AI-assisted development into my workflow, using tools like Copilot, Claude, and
+          Cursor alongside Spec-Driven Development: defining system architecture up front before writing a line of
+          code, which has meaningfully improved delivery speed and reduced rework.
+        </p>
+      </div>
+      <div class="about-photo">
+        <img src="docs/profile_pic.jpg" alt="Benjamin Driver">
+        <div class="about-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dallas, TX</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">02 / Skills</div>
+    <h2 class="section-heading">Tech stack</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-label">Languages</div>
+        <div class="skill-tags">
+          <span class="tag">PHP</span>
+          <span class="tag">SQL / PL/SQL</span>
+          <span class="tag">Python</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Java</span>
+          <span class="tag">C++</span>
+          <span class="tag">XML</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Frameworks &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="tag">Magento 2</span>
+          <span class="tag">Laravel</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Vue.js</span>
+          <span class="tag">Oracle APEX</span>
+          <span class="tag">RabbitMQ</span>
+          <span class="tag">Composer</span>
+          <span class="tag">Selenium</span>
+          <span class="tag">Git / GitLab</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Databases</div>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">Oracle</span>
+          <span class="tag">MSSQL</span>
+          <span class="tag">MariaDB</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">eCommerce &amp; Integration</div>
+        <div class="skill-tags">
+          <span class="tag">Magento Cloud</span>
+          <span class="tag">Digital Ocean</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">JSON Messaging</span>
+          <span class="tag">Pub/Sub</span>
+          <span class="tag">Algolia Search</span>
+          <span class="tag">3rd-Party Modules</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Architecture &amp; Methods</div>
+        <div class="skill-tags">
+          <span class="tag">OOP / OOD</span>
+          <span class="tag">MVC</span>
+          <span class="tag">ETL Pipelines</span>
+          <span class="tag">Closed-Loop Design</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">AI &amp; Tooling</div>
+        <div class="skill-tags">
+          <span class="tag">Spec-Driven Dev</span>
+          <span class="tag">GitHub Copilot</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Cursor</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">03 / Projects</div>
+    <h2 class="section-heading">Things I've built</h2>
+    <div class="project-card">
+      <div class="project-card-header">
+        <div class="project-card-title">Power Capacity Calculator</div>
+      </div>
+      <p class="project-card-desc">
+        A Vue.js data-center rack power &amp; cooling estimator. Enter rack counts,
+        servers per rack, and floor space to live-compute power draw, cooling load,
+        total kW, watts/ft², and maximum rack capacity.
+      </p>
+      <div id="power-calculator">
+        <iframe
+                src="./calculator/index.html"
+                title="Power Capacity Calculator"
+                loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-label">04 / Experience</div>
+    <h2 class="section-heading">Where I've worked</h2>
+    <div class="exp-list">
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-company">Traxxas</div>
+          <div class="exp-dates">July 2020 to Present</div>
+        </div>
+        <div class="exp-role">Full-Stack Developer / Scrum Master · McKinney, TX</div>
+        <ul class="exp-bullets">
+          <li>Served as Scrum Master for an agile development team, leading standups, sprint planning, and task distribution while remaining an active hands-on contributor.</li>
+          <li>Led architectural design of the Magento 2 + RabbitMQ integration platform, defining publisher/consumer/queue structure and automated listener jobs for real-time JSON messaging across product, inventory, order, and content streams.</li>
+          <li>Built custom Magento 2 modules from scratch (registration.php, di.xml, plugin/observer patterns) and extended core and 3rd-party modules.</li>
+          <li>Architected end-to-end pipelines integrating Magento with Oracle APEX and MSSQL, including stored procedures and scheduled jobs with closed-loop logic to automatically detect and correct data discrepancies.</li>
+          <li>Developed mobile-responsive Magento features with a mobile-first mindset, ensuring a consistent experience across web and mobile.</li>
+          <li>Applied Spec-Driven AI Development workflows to define system architecture before implementation, improving delivery speed and reducing rework.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-company">Innovation First International</div>
+          <div class="exp-dates">May 2019 to June 2020</div>
+        </div>
+        <div class="exp-role">Web Developer / IT Support · Greenville, TX</div>
+        <ul class="exp-bullets">
+          <li>Contributed to a Magento 1 to Magento 2 migration, handling infrastructure planning, CMS page transitions, and 3rd-party module compatibility.</li>
+          <li>Managed Composer dependencies across Magento 2 and Laravel projects, coordinating version upgrades and maintaining package compatibility.</li>
+          <li>Integrated Algolia Instant Search into Magento 2 with custom faceted filtering, improving product discoverability and search performance.</li>
+          <li>Built and maintained Laravel applications using MVC patterns, including automated PHP indexing jobs and MySQL data pipelines.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <hr class="section-divider">
+
+  <!-- CONNECT -->
+  <section id="connect">
+    <div class="section-label">05 / Connect</div>
+    <h2 class="section-heading">Get in touch</h2>
+    <div class="links-grid">
+      <a class="link-card" href="https://www.linkedin.com/in/bwdriver/" target="_blank" rel="noopener">
+        <div class="link-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
+        <div>
+          <div class="link-label">LinkedIn</div>
+          <div class="link-sub">linkedin.com/in/bwdriver</div>
+        </div>
       </a>
-      <a class="btn btn-outline" href="#connect">
-        <i class="fa-solid fa-envelope" aria-hidden="true"></i> Get in Touch
+      <a class="link-card" href="https://github.com/Ben-Driver" target="_blank" rel="noopener">
+        <div class="link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
+        <div>
+          <div class="link-label">GitHub</div>
+          <div class="link-sub">github.com/Ben-Driver</div>
+        </div>
       </a>
-      <a class="btn btn-outline" href="https://github.com/Ben-Driver" target="_blank" rel="noopener">
-        <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+      <a class="link-card" href="mailto:benwadedriver@gmail.com">
+        <div class="link-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
+        <div>
+          <div class="link-label">Email</div>
+          <div class="link-sub">benwadedriver@gmail.com</div>
+        </div>
+      </a>
+      <a class="link-card" href="docs/BenDriver_Resume_Web.pdf" target="_blank" rel="noopener">
+        <div class="link-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+        <div>
+          <div class="link-label">Resume</div>
+          <div class="link-sub">Download PDF</div>
+        </div>
       </a>
     </div>
-  </div>
-
-  <!-- TICKER -->
-  <div class="ticker-wrap">
-    <div class="ticker-track">
-      <!-- set 1 -->
-      <span class="ticker-item"><span>//</span> PHP</span>
-      <span class="ticker-item"><span>//</span> Magento 2</span>
-      <span class="ticker-item"><span>//</span> RabbitMQ</span>
-      <span class="ticker-item"><span>//</span> Oracle APEX</span>
-      <span class="ticker-item"><span>//</span> Laravel</span>
-      <span class="ticker-item"><span>//</span> Vue.js</span>
-      <span class="ticker-item"><span>//</span> Node.js</span>
-      <span class="ticker-item"><span>//</span> Python</span>
-      <span class="ticker-item"><span>//</span> MySQL</span>
-      <span class="ticker-item"><span>//</span> REST APIs</span>
-      <span class="ticker-item"><span>//</span> CI/CD</span>
-      <span class="ticker-item"><span>//</span> Scrum Master</span>
-      <span class="ticker-item"><span>//</span> ETL Pipelines</span>
-      <span class="ticker-item"><span>//</span> Algolia Search</span>
-      <!-- set 2 (duplicate for seamless loop) -->
-      <span class="ticker-item"><span>//</span> PHP</span>
-      <span class="ticker-item"><span>//</span> Magento 2</span>
-      <span class="ticker-item"><span>//</span> RabbitMQ</span>
-      <span class="ticker-item"><span>//</span> Oracle APEX</span>
-      <span class="ticker-item"><span>//</span> Laravel</span>
-      <span class="ticker-item"><span>//</span> Vue.js</span>
-      <span class="ticker-item"><span>//</span> Node.js</span>
-      <span class="ticker-item"><span>//</span> Python</span>
-      <span class="ticker-item"><span>//</span> MySQL</span>
-      <span class="ticker-item"><span>//</span> REST APIs</span>
-      <span class="ticker-item"><span>//</span> CI/CD</span>
-      <span class="ticker-item"><span>//</span> Scrum Master</span>
-      <span class="ticker-item"><span>//</span> ETL Pipelines</span>
-      <span class="ticker-item"><span>//</span> Algolia Search</span>
-    </div>
-  </div>
-</div>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="section-label">01 / About</div>
-  <h2 class="section-heading">A little background</h2>
-  <div class="about-grid">
-    <div class="about-text">
-      <p>
-        I'm a full-stack developer with a B.S. in Computer Science from
-        <a href="https://new.tamuc.edu/" target="_blank" rel="noopener">East Texas A&amp;M University</a>
-        (minor in Mathematics) and over 5 years of professional experience building
-        production-grade eCommerce and backend systems.
-      </p>
-      <p>
-        At <a href="https://www.traxxas.com/" target="_blank" rel="noopener">Traxxas</a> I wear two hats:
-        hands-on developer and Scrum Master. Day to day that means architecting
-        Magento 2 modules and RabbitMQ publisher/consumer pipelines, integrating
-        with Oracle APEX and MSSQL, and running agile ceremonies for my team.
-        I enjoy problems that sit at the intersection of data architecture and
-        real-time reliability, getting disparate systems to stay in sync automatically.
-      </p>
-      <p>
-        Before Traxxas I was at
-        <a href="https://www.innovationfirst.com/" target="_blank" rel="noopener">Innovation First International</a>,
-        where I contributed to a Magento 1 to 2 migration, integrated
-        Algolia Instant Search, built Laravel applications, and developed a Vue.js power consumption calculator 
-        for Rack Solutions that helped customers estimate a server rack's energy draw 
-        and cooling needs before purchase.
-      </p>
-      <p>
-        I've also incorporated Spec-Driven AI Development into my workflow:
-        defining system architecture up front before writing a line of code,
-        which has meaningfully improved delivery speed and reduced rework.
-      </p>
-    </div>
-    <div class="about-photo">
-      <img src="docs/profile_pic.jpg" alt="Benjamin Driver">
-      <div class="about-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dallas, TX</div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- SKILLS -->
-<section id="skills">
-  <div class="section-label">02 / Skills</div>
-  <h2 class="section-heading">Tech stack</h2>
-  <div class="skills-grid">
-    <div class="skill-card">
-      <div class="skill-card-label">Languages</div>
-      <div class="skill-tags">
-        <span class="tag">PHP</span>
-        <span class="tag">SQL / PL/SQL</span>
-        <span class="tag">Python</span>
-        <span class="tag">JavaScript</span>
-        <span class="tag">Java</span>
-        <span class="tag">C++</span>
-        <span class="tag">XML</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">Frameworks &amp; Tools</div>
-      <div class="skill-tags">
-        <span class="tag">Magento 2</span>
-        <span class="tag">Laravel</span>
-        <span class="tag">Node.js</span>
-        <span class="tag">Vue.js</span>
-        <span class="tag">Oracle APEX</span>
-        <span class="tag">RabbitMQ</span>
-        <span class="tag">Composer</span>
-        <span class="tag">Selenium</span>
-        <span class="tag">Git / GitLab</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">Databases</div>
-      <div class="skill-tags">
-        <span class="tag">MySQL</span>
-        <span class="tag">Oracle</span>
-        <span class="tag">MSSQL</span>
-        <span class="tag">MariaDB</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">eCommerce &amp; Integration</div>
-      <div class="skill-tags">
-        <span class="tag">Magento Cloud</span>
-        <span class="tag">Digital Ocean</span>
-        <span class="tag">REST APIs</span>
-        <span class="tag">JSON Messaging</span>
-        <span class="tag">Pub/Sub</span>
-        <span class="tag">Algolia Search</span>
-        <span class="tag">3rd-Party Modules</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">Architecture &amp; Methods</div>
-      <div class="skill-tags">
-        <span class="tag">OOP / OOD</span>
-        <span class="tag">MVC</span>
-        <span class="tag">ETL Pipelines</span>
-        <span class="tag">Closed-Loop Design</span>
-        <span class="tag">Agile / Scrum</span>
-        <span class="tag">CI/CD</span>
-      </div>
-    </div>
-    <div class="skill-card">
-      <div class="skill-card-label">AI &amp; Tooling</div>
-      <div class="skill-tags">
-        <span class="tag">Spec-Driven Dev</span>
-        <span class="tag">GitHub Copilot</span>
-        <span class="tag">Claude</span>
-        <span class="tag">Cursor</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- EXPERIENCE -->
-<section id="experience">
-  <div class="section-label">03 / Experience</div>
-  <h2 class="section-heading">Where I've worked</h2>
-  <div class="exp-list">
-
-    <div class="exp-card">
-      <div class="exp-header">
-        <div class="exp-company">Traxxas</div>
-        <div class="exp-dates">July 2020 to Present</div>
-      </div>
-      <div class="exp-role">Full-Stack Developer / Scrum Master · McKinney, TX</div>
-      <ul class="exp-bullets">
-        <li>Served as Scrum Master for an agile development team, leading standups, sprint planning, and task distribution while remaining an active hands-on contributor.</li>
-        <li>Led architectural design of the Magento 2 + RabbitMQ integration platform, defining publisher/consumer/queue structure and automated listener jobs for real-time JSON messaging across product, inventory, order, and content streams.</li>
-        <li>Built custom Magento 2 modules from scratch (registration.php, di.xml, plugin/observer patterns) and extended core and 3rd-party modules.</li>
-        <li>Architected end-to-end pipelines integrating Magento with Oracle APEX and MSSQL, including stored procedures and scheduled jobs with closed-loop logic to automatically detect and correct data discrepancies.</li>
-        <li>Developed mobile-responsive Magento features with a mobile-first mindset, ensuring a consistent experience across web and mobile.</li>
-        <li>Applied Spec-Driven AI Development workflows to define system architecture before implementation, improving delivery speed and reducing rework.</li>
-      </ul>
-    </div>
-
-    <div class="exp-card">
-      <div class="exp-header">
-        <div class="exp-company">Innovation First International</div>
-        <div class="exp-dates">May 2019 to June 2020</div>
-      </div>
-      <div class="exp-role">Web Developer / IT Support · Greenville, TX</div>
-      <ul class="exp-bullets">
-        <li>Contributed to a Magento 1 to Magento 2 migration, handling infrastructure planning, CMS page transitions, and 3rd-party module compatibility.</li>
-        <li>Managed Composer dependencies across Magento 2 and Laravel projects, coordinating version upgrades and maintaining package compatibility.</li>
-        <li>Integrated Algolia Instant Search into Magento 2 with custom faceted filtering, improving product discoverability and search performance.</li>
-        <li>Built and maintained Laravel applications using MVC patterns, including automated PHP indexing jobs and MySQL data pipelines.</li>
-      </ul>
-    </div>
-
-  </div>
-</section>
-
-<hr class="section-divider">
-
-<!-- CONNECT -->
-<section id="connect">
-  <div class="section-label">04 / Connect</div>
-  <h2 class="section-heading">Get in touch</h2>
-  <div class="links-grid">
-    <a class="link-card" href="https://www.linkedin.com/in/bwdriver/" target="_blank" rel="noopener">
-      <div class="link-icon"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></div>
-      <div>
-        <div class="link-label">LinkedIn</div>
-        <div class="link-sub">linkedin.com/in/bwdriver</div>
-      </div>
-    </a>
-    <a class="link-card" href="https://github.com/Ben-Driver" target="_blank" rel="noopener">
-      <div class="link-icon"><i class="fa-brands fa-github" aria-hidden="true"></i></div>
-      <div>
-        <div class="link-label">GitHub</div>
-        <div class="link-sub">github.com/Ben-Driver</div>
-      </div>
-    </a>
-    <a class="link-card" href="mailto:benwadedriver@gmail.com">
-      <div class="link-icon"><i class="fa-solid fa-envelope" aria-hidden="true"></i></div>
-      <div>
-        <div class="link-label">Email</div>
-        <div class="link-sub">benwadedriver@gmail.com</div>
-      </div>
-    </a>
-    <a class="link-card" href="docs/BenDriver_Resume_Web.pdf" target="_blank" rel="noopener">
-      <div class="link-icon"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
-      <div>
-        <div class="link-label">Resume</div>
-        <div class="link-sub">Download PDF</div>
-      </div>
-    </a>
-  </div>
-</section>
+  </section>
 
 </main>
 
@@ -723,6 +784,27 @@
 <footer>
   <p>Designed &amp; built by <a href="#top">Benjamin Driver</a> · Dallas, TX</p>
 </footer>
+
+<script>
+  (function () {
+    var frame = document.querySelector('#power-calculator iframe');
+    if (!frame) return;
+    function fit() {
+      try {
+        var doc = frame.contentDocument || frame.contentWindow.document;
+        var h = doc.documentElement.scrollHeight || doc.body.scrollHeight;
+        if (h) frame.style.height = h + 'px';
+      } catch (e) { /* ignore until frame is ready */ }
+    }
+    frame.addEventListener('load', function () {
+      fit();
+      // Re-fit a couple of times to catch the widget's async render.
+      setTimeout(fit, 250);
+      setTimeout(fit, 1000);
+    });
+    window.addEventListener('resize', fit);
+  })();
+</script>
 
 </body>
 </html>
