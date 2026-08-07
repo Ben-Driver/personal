@@ -11,6 +11,14 @@
             background: #0b1120;            /* matches the widget's dark theme */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
+        /* app.js's .pcc__grid has a hard 210px column minimum with no fallback,
+           so it overflows (overlapping fields + a horizontal scrollbar) once this
+           host page is embedded narrower than ~210px + its own padding, which
+           happens on real phones once the site's own layout padding is subtracted.
+           min(210px, 100%) lets the column shrink to the container instead. */
+        .pcc__grid {
+            grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr)) !important;
+        }
     </style>
 </head>
 <body>

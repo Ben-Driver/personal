@@ -801,8 +801,21 @@
       // Re-fit a couple of times to catch the widget's async render.
       setTimeout(fit, 250);
       setTimeout(fit, 1000);
+      // React to the widget's own content height changing (DevTools device
+      // toggles, orientation flips, input-driven reflows) instead of guessing
+      // timing — a plain resize listener can fire before the iframe's inner
+      // layout has caught up, leaving the frame stuck at a stale height.
+      try {
+        var doc = frame.contentDocument || frame.contentWindow.document;
+        if (window.ResizeObserver && doc && doc.body) {
+          new ResizeObserver(fit).observe(doc.body);
+        }
+      } catch (e) { /* ignore */ }
     });
-    window.addEventListener('resize', fit);
+    window.addEventListener('resize', function () {
+      fit();
+      setTimeout(fit, 250);
+    });
   })();
 </script>
 
