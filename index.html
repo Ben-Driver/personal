@@ -4,21 +4,59 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="docs/profile_pic.jpg">
-  <title>Benjamin Driver - Full-Stack Developer</title>
+  <title>Benjamin Driver - Software Engineer | Magento 2 / Adobe Commerce, Integrations, Warehouse Systems</title>
 
   <!-- SEO -->
-  <meta name="description" content="Benjamin Driver - Full-Stack Developer in Dallas, TX. 5+ years building Magento 2 integrations, RabbitMQ pipelines, and scalable eCommerce and backend systems.">
+  <meta name="description" content="Benjamin Driver, Software Engineer in Dallas-Fort Worth. 6+ years building on Magento 2 / Adobe Commerce and Hyvä, RabbitMQ event-driven integrations with Oracle WMS and ERP systems, and Oracle APEX / PL/SQL warehouse apps.">
   <meta name="author" content="Benjamin Driver">
+  <link rel="canonical" href="https://ben-driver.github.io/personal/">
 
   <!-- Open Graph / social sharing -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Benjamin Driver - Full-Stack Developer">
-  <meta property="og:description" content="5+ years building Magento 2 integrations, real-time data pipelines, and scalable full-stack applications. Currently leading development and Scrum at Traxxas.">
-  <meta property="og:image" content="docs/profile_pic.jpg">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://ben-driver.github.io/personal/">
+  <meta property="og:title" content="Benjamin Driver - Software Engineer">
+  <meta property="og:description" content="6+ years building on Magento 2 / Adobe Commerce and the event-driven integrations that connect it to warehouse and ERP systems.">
+  <meta property="og:image" content="https://ben-driver.github.io/personal/docs/profile_pic.jpg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Benjamin Driver - Full-Stack Developer">
-  <meta name="twitter:description" content="Full-Stack Developer in Dallas, TX. Magento 2, RabbitMQ, real-time data pipelines.">
-  <meta name="twitter:image" content="docs/profile_pic.jpg">
+  <meta name="twitter:title" content="Benjamin Driver - Software Engineer">
+  <meta name="twitter:description" content="Software Engineer in Dallas-Fort Worth. Magento 2 / Adobe Commerce, Hyvä, RabbitMQ integrations, Oracle warehouse systems.">
+  <meta name="twitter:image" content="https://ben-driver.github.io/personal/docs/profile_pic.jpg">
+
+  <!-- Structured data (schema.org Person) for search engines and AI sourcing tools -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Benjamin Driver",
+    "jobTitle": "Software Engineer",
+    "description": "Software engineer with 6+ years building on Magento 2 / Adobe Commerce and Hyvä, event-driven RabbitMQ integrations between e-commerce and Oracle WMS/ERP systems, and Oracle APEX / PL/SQL warehouse applications.",
+    "url": "https://ben-driver.github.io/personal/",
+    "image": "https://ben-driver.github.io/personal/docs/profile_pic.jpg",
+    "email": "mailto:benwadedriver@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Dallas-Fort Worth",
+      "addressRegion": "TX",
+      "addressCountry": "US"
+    },
+    "worksFor": { "@type": "Organization", "name": "Traxxas", "url": "https://traxxas.com/" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "East Texas A&M University" },
+    "knowsAbout": [
+      "PHP", "Magento 2", "Adobe Commerce", "Adobe Commerce Cloud", "Hyvä", "Laravel",
+      "RabbitMQ", "Event-driven architecture", "REST APIs", "GraphQL",
+      "Oracle", "PL/SQL", "Oracle APEX", "MySQL", "Microsoft SQL Server",
+      "OpenSearch", "Elasticsearch", "Algolia",
+      "Warehouse management systems", "Supply chain software", "Carrier API integration",
+      "JavaScript", "Python", "TypeScript", "C#", ".NET",
+      "Docker", "Jenkins", "CI/CD", "Playwright", "Selenium", "PHPUnit",
+      "Claude Code", "AI-assisted test automation", "Agile", "Scrum"
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/in/bwdriver/",
+      "https://github.com/Ben-Driver"
+    ]
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -255,7 +293,7 @@
     /* ── SKILLS ── */
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
       gap: 20px;
     }
     .skill-card {
@@ -289,8 +327,61 @@
       color: var(--slate);
       border: 1px solid var(--border);
     }
+    .tag-core {
+      color: var(--white);
+      border-color: rgba(0,194,179,.55);
+      background: rgba(0,194,179,.10);
+      font-weight: 500;
+    }
+    .skills-legend {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px 18px;
+      margin: -36px 0 32px;
+      font-size: .8rem;
+      color: var(--slate);
+    }
+    .skills-legend span { display: inline-flex; align-items: center; gap: 8px; }
 
     /* ── PROJECTS ── */
+    .projects-intro {
+      color: var(--slate);
+      font-size: .95rem;
+      line-height: 1.8;
+      max-width: 720px;
+      margin: -32px 0 40px;
+    }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    .projects-grid .project-card {
+      display: flex;
+      flex-direction: column;
+      transition: border-color .2s, transform .2s;
+    }
+    .projects-grid .project-card:hover { border-color: var(--teal); transform: translateY(-2px); }
+    .projects-grid .project-card-desc { margin-bottom: 16px; }
+    .project-shows {
+      font-size: .82rem;
+      color: var(--slate);
+      line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .project-shows b { color: var(--teal); font-weight: 500; }
+    .project-tech { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+    .project-tech .tag { font-size: .72rem; padding: 3px 10px; }
+    .project-card-kicker {
+      font-size: .7rem;
+      font-weight: 500;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 6px;
+    }
     .project-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -466,6 +557,9 @@
       .nav-toggle:checked ~ .nav-links { display: flex; }
       .nav-links li { width: 100%; }
       .nav-links a { display: block; padding: 12px 24px; }
+      .project-card { padding: 22px 18px; }
+      .skill-card { padding: 22px 18px; }
+      .exp-card { padding: 24px 20px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -497,15 +591,17 @@
   <!-- HERO -->
   <div id="top">
     <div class="hero">
-      <div class="hero-eyebrow">Full-Stack Developer · Dallas, TX</div>
+      <div class="hero-eyebrow">Software Engineer · <span style="white-space: nowrap;">Dallas–Fort Worth, TX</span></div>
       <h1 class="hero-name">Benjamin<br>Driver</h1>
-      <div class="hero-title">Building <span>eCommerce platforms</span> &amp; backend systems</div>
+      <div class="hero-title">Connecting <span>e-commerce</span> to the <span>warehouse</span></div>
       <p class="hero-desc">
-        5+ years crafting Magento 2 integrations, real-time data pipelines, and
-        scalable full-stack applications. Currently leading development and Scrum at Traxxas.
+        6+ years building on Magento 2 / Adobe Commerce and the event-driven integrations that
+        connect it to an Oracle warehouse and ERP system, moving tens of thousands of orders a day
+        through RabbitMQ. I also build the handheld apps warehouse associates use on the floor, so
+        I work on both sides of an order and the bridge between them.
       </p>
       <div class="hero-ctas">
-        <a class="btn btn-primary" href="docs/BenDriver_Resume_Web.pdf" target="_blank" rel="noopener">
+        <a class="btn btn-primary" href="resume.html">
           <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Resume
         </a>
         <a class="btn btn-outline" href="#connect">
@@ -522,34 +618,34 @@
       <div class="ticker-track">
         <!-- set 1 -->
         <span class="ticker-item"><span>//</span> PHP</span>
-        <span class="ticker-item"><span>//</span> Magento 2</span>
+        <span class="ticker-item"><span>//</span> Magento 2 / Adobe Commerce</span>
+        <span class="ticker-item"><span>//</span> Hyvä</span>
         <span class="ticker-item"><span>//</span> RabbitMQ</span>
+        <span class="ticker-item"><span>//</span> Oracle PL/SQL</span>
         <span class="ticker-item"><span>//</span> Oracle APEX</span>
         <span class="ticker-item"><span>//</span> Laravel</span>
-        <span class="ticker-item"><span>//</span> Vue.js</span>
-        <span class="ticker-item"><span>//</span> Node.js</span>
-        <span class="ticker-item"><span>//</span> Python</span>
-        <span class="ticker-item"><span>//</span> MySQL</span>
-        <span class="ticker-item"><span>//</span> REST APIs</span>
-        <span class="ticker-item"><span>//</span> CI/CD</span>
-        <span class="ticker-item"><span>//</span> Scrum Master</span>
-        <span class="ticker-item"><span>//</span> ETL Pipelines</span>
-        <span class="ticker-item"><span>//</span> Algolia Search</span>
+        <span class="ticker-item"><span>//</span> OpenSearch</span>
+        <span class="ticker-item"><span>//</span> Algolia</span>
+        <span class="ticker-item"><span>//</span> REST &amp; GraphQL</span>
+        <span class="ticker-item"><span>//</span> Docker</span>
+        <span class="ticker-item"><span>//</span> Jenkins</span>
+        <span class="ticker-item"><span>//</span> Playwright</span>
+        <span class="ticker-item"><span>//</span> Claude Code</span>
         <!-- set 2 (duplicate for seamless loop) -->
-        <span class="ticker-item"><span>//</span> PHP</span>
-        <span class="ticker-item"><span>//</span> Magento 2</span>
-        <span class="ticker-item"><span>//</span> RabbitMQ</span>
-        <span class="ticker-item"><span>//</span> Oracle APEX</span>
-        <span class="ticker-item"><span>//</span> Laravel</span>
-        <span class="ticker-item"><span>//</span> Vue.js</span>
-        <span class="ticker-item"><span>//</span> Node.js</span>
-        <span class="ticker-item"><span>//</span> Python</span>
-        <span class="ticker-item"><span>//</span> MySQL</span>
-        <span class="ticker-item"><span>//</span> REST APIs</span>
-        <span class="ticker-item"><span>//</span> CI/CD</span>
-        <span class="ticker-item"><span>//</span> Scrum Master</span>
-        <span class="ticker-item"><span>//</span> ETL Pipelines</span>
-        <span class="ticker-item"><span>//</span> Algolia Search</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> PHP</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Magento 2 / Adobe Commerce</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Hyvä</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> RabbitMQ</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Oracle PL/SQL</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Oracle APEX</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Laravel</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> OpenSearch</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Algolia</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> REST &amp; GraphQL</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Docker</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Jenkins</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Playwright</span>
+        <span class="ticker-item" aria-hidden="true"><span>//</span> Claude Code</span>
       </div>
     </div>
   </div>
@@ -561,38 +657,44 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I'm a full-stack developer with a B.S. in Computer Science from
+          I'm a software engineer in Dallas–Fort Worth with a B.S. in Computer Science from
           <a href="https://new.tamuc.edu/" target="_blank" rel="noopener">East Texas A&amp;M University</a>
-          (minor in Mathematics) and over 5 years of professional experience building
-          production-grade eCommerce and backend systems.
+          (minor in Mathematics) and 6+ years of professional experience on e-commerce and warehouse systems.
+          Most developers know one side or the other. I've built both, and the integration between them.
         </p>
         <p>
-          At <a href="https://www.traxxas.com/" target="_blank" rel="noopener">Traxxas</a> I build and maintain
-          a Magento 2 platform backed by a RabbitMQ-driven microservices layer, with publishers and consumers
-          handling real-time product, inventory, order, and content data. I've also built distributed Oracle APEX
-          and PL/SQL services for warehouse fulfillment, including inventory allocation and integrations with
-          carrier APIs like USPS, UPS, and FedEx, along with closed-loop reconciliation systems that keep Magento,
-          Oracle, and MSSQL in sync automatically. I enjoy problems that sit at the intersection of data architecture
-          and real-time reliability. I also serve as Scrum Master for my team, running sprint planning and standups
-          alongside my development work.
+          At <a href="https://www.traxxas.com/" target="_blank" rel="noopener">Traxxas</a> I work across the whole
+          path of an order. On the storefront, I build custom Magento 2 / Adobe Commerce modules (plugins, observers,
+          service contracts, GraphQL resolvers, webhooks) and Hyvä theme features with Algolia search. Behind it, I
+          designed the RabbitMQ framework that connects Magento to our Oracle WMS, ERP and CMS. Its consumers are
+          idempotent, process parents before children, and send failures to an error queue that alerts the team
+          instead of losing a message. It moves tens of thousands of orders a day.
+        </p>
+        <p>
+          I also build the Oracle APEX / PL/SQL apps associates use on Zebra handhelds: case picking, cycle counts,
+          restocking, item dimensioning, and UPS, USPS and FedEx label printing. I've spent time on the warehouse
+          floor watching how those tools actually get used, and some of my best features came from that, like a
+          confirmation scan that catches the wrong case before it ships, or a label that prints the moment the
+          associate hits submit.
+        </p>
+        <p>
+          I own deployments to Adobe Commerce Cloud, lead code reviews, mentor a junior developer, and serve as
+          Scrum Master for my team. We haven't had a significant site outage since I took over deployments, and
+          every deploy now runs automated checks that compare the live site against the system of record and
+          republish anything missing. I use AI where it measurably helps: our feature testing runs Playwright
+          alongside Claude agents that review failures and explain them in plain English.
         </p>
         <p>
           Before Traxxas I was at
           <a href="https://www.innovationfirst.com/" target="_blank" rel="noopener">Innovation First International</a>,
-          where I contributed to a Magento 1 to 2 migration, integrated
-          Algolia Instant Search, built Laravel applications, and developed a Vue.js power consumption calculator
-          for Rack Solutions that helped customers estimate a server rack's energy draw
-          and cooling needs before purchase.
-        </p>
-        <p>
-          I've also incorporated AI-assisted development into my workflow, using tools like Copilot, Claude, and
-          Cursor alongside Spec-Driven Development: defining system architecture up front before writing a line of
-          code, which has meaningfully improved delivery speed and reduced rework.
+          where I worked on a Magento 1 to 2 migration, built Laravel applications, integrated Algolia Instant
+          Search into Magento 2 (experience I've since carried into Hyvä work at Traxxas), and built the Vue.js
+          power capacity calculator in my projects below.
         </p>
       </div>
       <div class="about-photo">
         <img src="docs/profile_pic.jpg" alt="Benjamin Driver">
-        <div class="about-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dallas, TX</div>
+        <div class="about-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Dallas–Fort Worth, TX</div>
       </div>
     </div>
   </section>
@@ -603,72 +705,106 @@
   <section id="skills">
     <div class="section-label">02 / Skills</div>
     <h2 class="section-heading">Tech stack</h2>
+    <div class="skills-legend">
+      <span><span class="tag tag-core">Core</span> daily, production work</span>
+      <span><span class="tag">Working</span> used professionally</span>
+    </div>
     <div class="skills-grid">
       <div class="skill-card">
         <div class="skill-card-label">Languages</div>
         <div class="skill-tags">
-          <span class="tag">PHP</span>
-          <span class="tag">SQL / PL/SQL</span>
+          <span class="tag tag-core">PHP</span>
+          <span class="tag tag-core">SQL / PL/SQL</span>
+          <span class="tag tag-core">JavaScript</span>
+          <span class="tag tag-core">HTML / CSS</span>
           <span class="tag">Python</span>
-          <span class="tag">JavaScript</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">C#</span>
+          <span class="tag">Bash</span>
           <span class="tag">Java</span>
-          <span class="tag">C++</span>
-          <span class="tag">XML</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-label">Frameworks &amp; Tools</div>
+        <div class="skill-card-label">Commerce &amp; Frameworks</div>
         <div class="skill-tags">
-          <span class="tag">Magento 2</span>
-          <span class="tag">Laravel</span>
+          <span class="tag tag-core">Magento 2 / Adobe Commerce</span>
+          <span class="tag tag-core">Hyvä</span>
+          <span class="tag tag-core">Laravel</span>
+          <span class="tag tag-core">Oracle APEX</span>
+          <span class="tag">.NET</span>
           <span class="tag">Node.js</span>
           <span class="tag">Vue.js</span>
-          <span class="tag">Oracle APEX</span>
-          <span class="tag">RabbitMQ</span>
+          <span class="tag">Zonos Checkout</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Integration &amp; Messaging</div>
+        <div class="skill-tags">
+          <span class="tag tag-core">RabbitMQ</span>
+          <span class="tag tag-core">Event-Driven Architecture</span>
+          <span class="tag tag-core">REST APIs</span>
+          <span class="tag tag-core">Magento Message Queues</span>
+          <span class="tag">GraphQL</span>
+          <span class="tag">Webhooks</span>
+          <span class="tag">UPS / USPS / FedEx APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Data &amp; Search</div>
+        <div class="skill-tags">
+          <span class="tag tag-core">Oracle</span>
+          <span class="tag tag-core">MySQL</span>
+          <span class="tag tag-core">OpenSearch / Elasticsearch</span>
+          <span class="tag">Microsoft SQL Server</span>
+          <span class="tag">Algolia</span>
+          <span class="tag">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Cloud, DevOps &amp; Testing</div>
+        <div class="skill-tags">
+          <span class="tag tag-core">Adobe Commerce Cloud</span>
+          <span class="tag tag-core">CI/CD</span>
+          <span class="tag tag-core">Git / Bitbucket</span>
+          <span class="tag tag-core">Jenkins</span>
+          <span class="tag tag-core">Docker</span>
+          <span class="tag">Linux</span>
           <span class="tag">Composer</span>
+          <span class="tag">Playwright</span>
           <span class="tag">Selenium</span>
-          <span class="tag">Git / GitLab</span>
+          <span class="tag">PHPUnit</span>
+          <span class="tag">Postman</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-label">Databases</div>
+        <div class="skill-card-label">Warehouse Systems</div>
         <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">Oracle</span>
-          <span class="tag">MSSQL</span>
-          <span class="tag">MariaDB</span>
+          <span class="tag tag-core">WMS Workflows</span>
+          <span class="tag tag-core">Zebra Handhelds &amp; Printers</span>
+          <span class="tag">ZPL Labels</span>
+          <span class="tag">Cubiscan</span>
+          <span class="tag">Bin Location Systems</span>
         </div>
       </div>
       <div class="skill-card">
-        <div class="skill-card-label">eCommerce &amp; Integration</div>
+        <div class="skill-card-label">AI Tooling</div>
         <div class="skill-tags">
-          <span class="tag">Magento Cloud</span>
-          <span class="tag">Digital Ocean</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">JSON Messaging</span>
-          <span class="tag">Pub/Sub</span>
-          <span class="tag">Algolia Search</span>
-          <span class="tag">3rd-Party Modules</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-label">Architecture &amp; Methods</div>
-        <div class="skill-tags">
-          <span class="tag">OOP / OOD</span>
-          <span class="tag">MVC</span>
-          <span class="tag">ETL Pipelines</span>
-          <span class="tag">Closed-Loop Design</span>
-          <span class="tag">Agile / Scrum</span>
-          <span class="tag">CI/CD</span>
-        </div>
-      </div>
-      <div class="skill-card">
-        <div class="skill-card-label">AI &amp; Tooling</div>
-        <div class="skill-tags">
-          <span class="tag">Spec-Driven Dev</span>
+          <span class="tag">Claude Code</span>
+          <span class="tag">Anthropic SDK</span>
+          <span class="tag">AI Test Automation</span>
           <span class="tag">GitHub Copilot</span>
-          <span class="tag">Claude</span>
           <span class="tag">Cursor</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-label">Practices &amp; Leadership</div>
+        <div class="skill-tags">
+          <span class="tag tag-core">Agile / Scrum (Scrum Master)</span>
+          <span class="tag tag-core">Code Review</span>
+          <span class="tag tag-core">Release Management</span>
+          <span class="tag">Mentoring</span>
+          <span class="tag">Spec-Driven Development</span>
+          <span class="tag">Root Cause Analysis</span>
         </div>
       </div>
     </div>
@@ -680,12 +816,151 @@
   <section id="projects">
     <div class="section-label">03 / Projects</div>
     <h2 class="section-heading">Things I've built</h2>
+    <p class="projects-intro">
+      Most of my work is closed-source production code at Traxxas, so these describe how each system works
+      and what it does rather than linking to code. The calculator at the end is a live demo you can try.
+    </p>
+
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <div class="project-card-kicker">Integration · Traxxas</div>
+        <h3 class="project-card-title">Event-driven commerce ↔ WMS/ERP integration</h3>
+        <p class="project-card-desc">
+          A RabbitMQ framework connecting Magento 2 to an Oracle system of record (WMS, ERP and CMS). New feeds
+          extend a generic base module and register in an action pool instead of building a new pipeline.
+          Consumers upsert by the source system's IDs, process parents before children, and route failures to
+          an error queue that alerts the team. It carries tens of thousands of orders a day.
+        </p>
+        <p class="project-shows"><b>Shows:</b> integration design built for retries, ordering and failure.</p>
+        <div class="project-tech">
+          <span class="tag">PHP</span><span class="tag">Magento 2</span><span class="tag">RabbitMQ</span>
+          <span class="tag">Oracle</span><span class="tag">REST</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">E-commerce · Traxxas</div>
+        <h3 class="project-card-title">Power-Up trade-in program</h3>
+        <p class="project-card-desc">
+          A B2C trade-in program on Magento 2: customers pick an old part to send in and buy the upgrade. I built
+          the core flow. The trade-in catalog arrives from Oracle over RabbitMQ, the storefront validates stock and
+          region on add-to-cart, and flagged cart and order lines carry through to the ERP, which applies the
+          credit once the old part comes back.
+        </p>
+        <p class="project-shows"><b>Shows:</b> a full-stack feature from admin data to ERP order publishing.</p>
+        <div class="project-tech">
+          <span class="tag">Magento 2</span><span class="tag">PHP</span><span class="tag">RabbitMQ</span>
+          <span class="tag">Oracle APEX</span><span class="tag">AJAX</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">Warehouse · Traxxas</div>
+        <h3 class="project-card-title">Case-pick app for large dealer orders</h3>
+        <p class="project-card-desc">
+          A Zebra handheld app for picking full cases. Associates scan the bin, the case and the label, and a
+          confirmation scan has to match before inventory moves. Every pick is logged against the package and
+          shipment line. Version 2 moved processing to background jobs so the handheld responds instantly, and
+          made it idempotent so a double scan can't double-count. Large dealer orders now ship the same day
+          they're released.
+        </p>
+        <p class="project-shows"><b>Shows:</b> product thinking alongside operations, and idempotent design.</p>
+        <div class="project-tech">
+          <span class="tag">Oracle PL/SQL</span><span class="tag">Oracle APEX</span>
+          <span class="tag">Zebra Handhelds</span><span class="tag">Background Jobs</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">Reliability · Traxxas</div>
+        <h3 class="project-card-title">Post-deploy checks with automatic recovery</h3>
+        <p class="project-card-desc">
+          Every Adobe Commerce Cloud deploy triggers Jenkins, running in Docker, to run Selenium regression tests
+          and a scrape of the live site. The results are compared against what the system of record says should
+          be live, the team is alerted on drift, and missing data is republished automatically. After every
+          deploy, we know within minutes if anything broke.
+        </p>
+        <p class="project-shows"><b>Shows:</b> ownership of release quality, testing the real deployed build.</p>
+        <div class="project-tech">
+          <span class="tag">Adobe Commerce Cloud</span><span class="tag">Jenkins</span><span class="tag">Docker</span>
+          <span class="tag">Selenium</span><span class="tag">Oracle</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">AI tooling · Traxxas</div>
+        <h3 class="project-card-title">AI-assisted test automation</h3>
+        <p class="project-card-desc">
+          Two pieces, both in production. A Python script orchestrates Claude Code agents that exercise new
+          features on our Magento 2.4.8 site. A hybrid suite runs deterministic Playwright tests, and a Claude
+          agent (Anthropic SDK) reviews each failure and reports a plain-English explanation, a severity and
+          suggested fixes. I chose the hybrid design after measuring its time and cost against an all-agent
+          approach.
+        </p>
+        <p class="project-shows"><b>Shows:</b> using AI where it measurably helps, not everywhere.</p>
+        <div class="project-tech">
+          <span class="tag">Python</span><span class="tag">Playwright</span>
+          <span class="tag">Claude Code</span><span class="tag">Anthropic SDK</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">Search · Traxxas &amp; Innovation First</div>
+        <h3 class="project-card-title">Site search: OpenSearch &amp; Algolia</h3>
+        <p class="project-card-desc">
+          Site-wide search across products, articles and manuals, with custom Elasticsearch / OpenSearch indexes,
+          built for a consumer site's move from Drupal to Magento. It launched on schedule. I've also built
+          customer-specific search indexing and Hyvä storefront features with Algolia, carrying forward the
+          Algolia Instant Search integration I first built at Innovation First.
+        </p>
+        <p class="project-shows"><b>Shows:</b> learning a new system methodically and shipping on a deadline.</p>
+        <div class="project-tech">
+          <span class="tag">OpenSearch</span><span class="tag">ElasticSuite</span><span class="tag">Algolia</span>
+          <span class="tag">Hyvä</span><span class="tag">Magento 2</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">Warehouse · Traxxas</div>
+        <h3 class="project-card-title">Item dimensioning with Cubiscan</h3>
+        <p class="project-card-desc">
+          An app that finds products missing dimensions and guides an associate through measuring and weighing
+          them on a Cubiscan. The data syncs into Oracle so our Packsize box-sizing system picks the right box
+          at pack-out.
+        </p>
+        <p class="project-shows"><b>Shows:</b> fixing upstream data quality so downstream steps just work.</p>
+        <div class="project-tech">
+          <span class="tag">Oracle</span><span class="tag">SQL Server</span><span class="tag">ODBC</span>
+          <span class="tag">Cubiscan</span>
+        </div>
+      </article>
+
+      <article class="project-card">
+        <div class="project-card-kicker">Warehouse · Traxxas</div>
+        <h3 class="project-card-title">Carrier label integration</h3>
+        <p class="project-card-desc">
+          An Oracle APEX form builds the UPS shipping request in PL/SQL, sends it through a message queue to the
+          carrier, parses the response and sends the ZPL label straight to a Zebra network printer. It supports
+          multi-package shipments and prepaid return labels, and the label prints seconds after the associate
+          hits submit. I also integrated USPS and FedEx.
+        </p>
+        <p class="project-shows"><b>Shows:</b> end-to-end integration from a form to physical hardware.</p>
+        <div class="project-tech">
+          <span class="tag">Oracle APEX</span><span class="tag">PL/SQL</span><span class="tag">UPS / USPS / FedEx</span>
+          <span class="tag">ZPL</span>
+        </div>
+      </article>
+
+    </div>
+
     <div class="project-card">
       <div class="project-card-header">
+        <div class="project-card-kicker">Live demo · Innovation First International</div>
         <div class="project-card-title">Power Capacity Calculator</div>
       </div>
       <p class="project-card-desc">
-        A Vue.js data-center rack power &amp; cooling estimator. Enter rack counts,
+        A Vue.js data-center rack power &amp; cooling estimator I built for Rack Solutions. Enter rack counts,
         servers per rack, and floor space to live-compute power draw, cooling load,
         total kW, watts/ft², and maximum rack capacity.
       </p>
@@ -712,14 +987,19 @@
           <div class="exp-company">Traxxas</div>
           <div class="exp-dates">July 2020 to Present</div>
         </div>
-        <div class="exp-role">Full-Stack Developer / Scrum Master · McKinney, TX</div>
+        <div class="exp-role">Magento Developer · Dallas–Fort Worth, TX</div>
         <ul class="exp-bullets">
-          <li>Served as Scrum Master for an agile development team, leading standups, sprint planning, and task distribution while remaining an active hands-on contributor.</li>
-          <li>Led architectural design of the Magento 2 + RabbitMQ integration platform, defining publisher/consumer/queue structure and automated listener jobs for real-time JSON messaging across product, inventory, order, and content streams.</li>
-          <li>Built custom Magento 2 modules from scratch (registration.php, di.xml, plugin/observer patterns) and extended core and 3rd-party modules.</li>
-          <li>Architected end-to-end pipelines integrating Magento with Oracle APEX and MSSQL, including stored procedures and scheduled jobs with closed-loop logic to automatically detect and correct data discrepancies.</li>
-          <li>Developed mobile-responsive Magento features with a mobile-first mindset, ensuring a consistent experience across web and mobile.</li>
-          <li>Applied Spec-Driven AI Development workflows to define system architecture before implementation, improving delivery speed and reducing rework.</li>
+          <li>Led the architectural design of a scalable RabbitMQ framework connecting Magento 2 to the Oracle WMS, ERP and CMS: idempotent consumers, parent-before-child ordering, and an alerting error queue, moving tens of thousands of orders a day.</li>
+          <li>Build custom Magento 2 / Adobe Commerce modules from scratch (plugins, observers, dependency injection, service contracts, GraphQL resolvers, webhooks) and Hyvä storefront features with Algolia search, without touching core code.</li>
+          <li>Built the core flow of the Power-Up B2C trade-in program, from idempotent catalog consumers over RabbitMQ to line-level order attributes published to the ERP.</li>
+          <li>Own deployments to Adobe Commerce Cloud (Magento 2.4.8) and provision new cloud environments with Adobe; no significant site outage since taking over deployments.</li>
+          <li>Built post-deploy end-to-end checks on Jenkins and Docker that compare the live site to the system of record, alert on drift, and republish missing data automatically.</li>
+          <li>Built AI-assisted test automation now running in production: Python-orchestrated Claude Code agents for feature testing, and Playwright suites with a Claude agent that triages failures.</li>
+          <li>Built Oracle APEX / PL/SQL warehouse apps on Zebra handhelds, including a case-pick app that lets large dealer orders ship the day they're released, a cycle-count app that finished a full-warehouse count before an audit deadline, and Cubiscan dimensioning; integrated UPS, USPS and FedEx label printing.</li>
+          <li>Engineered self-healing reconciliation across Magento, Oracle and MSSQL that detects and corrects stalled or mismatched orders, including automatic retries for transient errors from a third-party fraud-screening service.</li>
+          <li>Built C#/.NET queueing services with MSSQL, integrated Zonos International Checkout for cross-border duties and taxes, and built Power BI sales reports on Oracle data.</li>
+          <li>Primary production support for the B2B dealer bulk-ordering platform, and supported the Six River Systems robotic picking rollout (bin location design, on-floor testing with the vendor).</li>
+          <li>Scrum Master, code reviewer and mentor to a junior developer; completed 1,000+ development and support requests.</li>
         </ul>
       </div>
 
@@ -734,6 +1014,7 @@
           <li>Managed Composer dependencies across Magento 2 and Laravel projects, coordinating version upgrades and maintaining package compatibility.</li>
           <li>Integrated Algolia Instant Search into Magento 2 with custom faceted filtering, improving product discoverability and search performance.</li>
           <li>Built and maintained Laravel applications using MVC patterns, including automated PHP indexing jobs and MySQL data pipelines.</li>
+          <li>Built a Vue.js power capacity calculator for Rack Solutions customers (live demo in Projects above).</li>
         </ul>
       </div>
 
@@ -782,7 +1063,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <p>Designed &amp; built by <a href="#top">Benjamin Driver</a> · Dallas, TX</p>
+  <p>Designed &amp; built by <a href="#top">Benjamin Driver</a> · Dallas–Fort Worth, TX</p>
 </footer>
 
 <script>
